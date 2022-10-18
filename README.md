@@ -2,9 +2,10 @@
 
 <img src="assets/icon.png" alt="Icon" width="100">
 
-An unofficial, single page, interactive website for the nu metal band Korn.
+An unofficial, single page, interactive website for the nu metal band
+[Korn](https://wikipedia.org/wiki/Korn).
 
-Work in progress.
+Pre-release work in progress.
 
 ## Table of contents
 
@@ -25,8 +26,11 @@ Work in progress.
 
 ## Documentation
 
+* The documented development envrionments are
+  [Visual Studio Code](https://code.visualstudio.com/) and standalone shell with
+  a text editor.
 * POSIX shell commands to be run as user are denoted by shell code blocks.
-* 'Visual Studio Code' and 'Code - OSS' are abbreviated to VS Code.
+* 'Visual Studio Code' and 'Code - OSS' are collectively abbreviated to VS Code.
 * Documentation and code symbols are written in United States English for
   integration with different programs and frameworks.
 
@@ -65,7 +69,7 @@ Apache-served directory.
 
 ## Code structure
 
-* Written in HTML, CSS, and TypeScript.
+* Written in HTML, CSS, and [TypeScript](https://www.typescriptlang.org/).
 * Built using [Yarn](https://yarnpkg.com/) and [Parcel](https://parceljs.org/).
 * Lines are no longer than 80 characters, unless readability or paths are
   affected.
