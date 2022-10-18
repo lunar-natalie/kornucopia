@@ -67,8 +67,8 @@ Run the following shell command to build the client into `dist/`:
 yarn build
 ```
 
-To host a production server, serve `dist/` as the server root or in an
-Apache-served directory.
+To host a production server, serve `dist/` as the server root or as an
+[Apache](https://apache.org/)-served directory.
 
 ## Project structure
 
