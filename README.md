@@ -9,8 +9,8 @@ An unofficial, single page, interactive website for the nu metal band Korn.
 * [Kornucopia](#kornucopia)
     * [Table of contents](#table-of-contents)
     * [Documentation](#documentation)
-    * [Development dependencies](#development-dependencies)
-    * [Building and running the development server](#building-and-running-the-development-server)
+    * [Server dependencies](#server-dependencies)
+    * [Development server](#development-server)
         * [Standalone](#standalone)
         * [VS Code](#vs-code)
     * [Production server](#production-server)
@@ -28,11 +28,11 @@ An unofficial, single page, interactive website for the nu metal band Korn.
 * Documentation and code symbols are written in United States English for
   integration with different programs and frameworks.
 
-## Development dependencies
+## Server dependencies
 
 - `yarn`
 
-## Building and running the development server
+## Development server
 
 The local server runs on http://localhost:8080. Supported browsers are
 [Chromium](https://www.chromium.org/Home/) (version 100 and newer) and
