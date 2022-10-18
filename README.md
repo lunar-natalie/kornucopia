@@ -1,5 +1,7 @@
 # Kornucopia
 
+<img src="assets/icon.png" alt="Icon" width="100">
+
 An unofficial, single page, interactive website for the nu metal band Korn.
 
 ## Table of contents
@@ -11,12 +13,13 @@ An unofficial, single page, interactive website for the nu metal band Korn.
     * [Building and running the development server](#building-and-running-the-development-server)
         * [Standalone](#standalone)
         * [VS Code](#vs-code)
-    * [Code structure](#code-structure)
     * [Production server](#production-server)
+    * [Code structure](#code-structure)
     * [Debugging](#debugging)
         * [Additional dependencies](#additional-dependencies)
         * [VS Code](#vs-code-1)
     * [License](#license)
+        * [Exceptions](#exceptions)
 
 ## Documentation
 
@@ -47,19 +50,28 @@ yarn install && yarn serve
 * Run Build Task (`Start development environment`)
     * Default keybind: `shift + ctrl/cmd + b`
 
+## Production server
+
+Run the following shell command to build the client into `dist/`:
+
+```shell
+yarn build
+```
+
+To host a production server, serve `dist/` as the server root or in an
+Apache-served directory.
+
 ## Code structure
 
 * Written in HTML, CSS, and TypeScript.
 * Built using [Yarn](https://yarnpkg.com/) and [Parcel](https://parceljs.org/).
-* Lines are no longer than 80 characters, unless readability is affected.
+* Lines are no longer than 80 characters, unless readability or paths are
+  affected.
 * Tab width is 4 spaces, excluding generated files such as `package.json` in
   which the default of a given tool is used.
 * Source code is located in `src/`.
-* Uses [JSDoc](https://jsdoc.app/) comments.
-
-## Production server
-
-TODO
+* TypeScript/JavaScript source code is written with [JSDoc](https://jsdoc.app/)
+  comments.
 
 ## Debugging
 
@@ -91,8 +103,36 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 Written by Natalie Wiggins.
 
-Assets under `static` may be held under licenses which differ from the source
-code for the project and website. In this case, see the corresponding `LICENSE`
-and `NOTICE` files in asset subdirectories for details.
+### Exceptions
+
+Website text content is Public Domain.
+
+The Kornucopia icon is Public Domain and arranged by Natalie Wiggins
+(`assets/icon.*`, `static/icons/favicon.*`).
+
+The Korn logo is copyright (c) Korn (`static/images/korn_logo.png`).
+
+The 'Kornucopia' font (origin unrelated to the Kornucopia website) is created by
+Korn and is of unknown license, however is free for both personal and commercial
+use (`static/fonts/kornucopia.ttf`). The style of this font was created by
+Jonathan Davis and Korn.
+
+Cover art for the albums *Korn* (1994), *Life is Peachy* (1996),
+*Follow the Leader* (1998), *Issues* (1999), *Untouchables* (2002), and
+*Take a Look in the Mirror* (2003) are copyright (c) Sony BMG Music
+Entertainment, all rights reserved.
+
+Cover art for the albums *See You on the Other Side* (2005), *\[Untitled\]*
+(2007), and *The Paradigm Shift* (2013) are copyright (c) Universal Music Group,
+all rights reserved.
+
+Cover art for the albums *Korn III: Remember Who You Are* (2010),
+*The Path of Totality* (2011), *The Serenity of Suffering* (2016), and
+*The Nothing* (2019) are copyright (c) Roadrunner Records, all rights reserved.
+
+Cover art for the album *Requiem* (2022) is copyright (c)
+Loma Vista Recordings / Concord, all rights reserved.
+
+Aformentioned cover art is located under `static/images/cover_art/`.
 
 See `LICENSE` and `AUTHORS` for more information.
