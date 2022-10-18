@@ -5,6 +5,8 @@
 An unofficial, single page, interactive website for the nu metal band
 [Korn](https://wikipedia.org/wiki/Korn).
 
+Kornucopia is written as pre-coursework for A level Computer Science.
+
 Pre-release work in progress.
 
 ## Table of contents
