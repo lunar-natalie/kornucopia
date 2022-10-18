@@ -8,12 +8,11 @@
   "private": false,
   "source": "src/index.html",
   "scripts": {
-    "serve": "parcel --port 8080"
+    "serve": "parcel --port 8080",
+    "build": "parcel build src/index.html"
   },
   "devDependencies": {
-    "parcel": "^2.7.0",
-    "parcel-reporter-static-files-copy": "^1.4.0"
+    "parcel": "^2.7.0"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
