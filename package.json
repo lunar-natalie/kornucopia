@@ -1,0 +1,19 @@
+{
+  "name": "kornucopia",
+  "version": "1.0.0",
+  "description": "Unofficial website for the nu metal band Korn",
+  "repository": "git@github.com:lunar-natalie/antheia.git",
+  "author": "Natalie Wiggins <islifepeachy@outlook.com>",
+  "license": "GPL-3.0",
+  "private": false,
+  "source": "src/index.html",
+  "scripts": {
+    "serve": "parcel --port 8080"
+  },
+  "devDependencies": {
+    "parcel": "^2.7.0",
+    "parcel-reporter-static-files-copy": "^1.4.0"
+  },
+  "dependencies": {
+  }
+}
