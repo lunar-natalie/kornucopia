@@ -4,6 +4,8 @@
 
 An unofficial, single page, interactive website for the nu metal band Korn.
 
+Work in progress.
+
 ## Table of contents
 
 * [Kornucopia](#kornucopia)
