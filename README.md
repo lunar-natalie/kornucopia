@@ -19,7 +19,8 @@ Pre-release work in progress.
         * [Standalone](#standalone)
         * [VS Code](#vs-code)
     * [Production server](#production-server)
-    * [Code structure](#code-structure)
+    * [Project structure](#project-structure)
+        * [Code](#code)
     * [Debugging](#debugging)
         * [Additional dependencies](#additional-dependencies)
         * [VS Code](#vs-code-1)
@@ -69,7 +70,13 @@ yarn build
 To host a production server, serve `dist/` as the server root or in an
 Apache-served directory.
 
-## Code structure
+## Project structure
+
+* Source code is located in `src/`.
+* Sources for assets are located in `assets/`.
+* Statically served assets are located in `static/`.
+
+### Code
 
 * Written in HTML, CSS, and [TypeScript](https://www.typescriptlang.org/).
 * Built using [Yarn](https://yarnpkg.com/) and [Parcel](https://parceljs.org/).
@@ -77,7 +84,6 @@ Apache-served directory.
   affected.
 * Tab width is 4 spaces, excluding generated files such as `package.json` in
   which the default of a given tool is used.
-* Source code is located in `src/`.
 * TypeScript/JavaScript source code is written with [JSDoc](https://jsdoc.app/)
   comments.
 
