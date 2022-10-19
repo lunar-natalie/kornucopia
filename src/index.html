@@ -4,14 +4,37 @@
         <meta charset="utf-8">
         <title>KoRnucopia</title>
         <link rel="stylesheet" href="index.css">
-        <link rel="icon" type="image/png" sizes="32x32" href="../static/icons/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="../static/icons/favicon-16x16.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../static/icons/favicon_32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../static/icons/favicon_16x16.png">
         <link rel="shortcut icon" href="../static/icons/favicon.ico">
         <script type="module" src="index.ts"></script>
     </head>
     <body>
-        <div class="top">
-            <img class="logo" src="../static/images/korn_logo.png" alt="Korn">
+        <header>
+            <div class="icon-container">
+                <a href="/">
+                    <img class="icon" src="../static/icons/icon.png" alt="Kornucopia">
+                </a>
+            </div>
+            <ul class="nav">
+                <li><a href="#about">About</a></li>
+                <li><a href="#albums">Albums</a></li>
+                <li><a href="#history">History</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+            </ul>
+        </header>
+        <div class="content">
+            <img class="korn-logo" src="../static/images/korn_logo.png" alt="Korn">
+            <p class="welcome">
+                Welcome to Kornucopia
+            </p>
+            <hr>
+            <footer>
+                Code is copyright &copy; Natalie Wiggins, 2022. Text content is
+                Public Domain. Other assets are held under different licenses. See
+                the <a href="https://github.com/lunar-natalie/kornucopia">source repository</a>
+                for more information.
+            </footer>
         </div>
     </body>
 </html>

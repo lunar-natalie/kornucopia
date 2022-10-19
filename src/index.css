@@ -1,12 +1,119 @@
+:root {
+    --color-fg: #ffffff;
+    --color-fg-alt: #d3d3d3;
+    --color-bg-alt: #505050;
+    --color-transition-time: 250ms;
+}
+
+@font-face {
+    font-family: Kornucopia;
+    src: url(../static/fonts/kornucopia.ttf);
+}
+
 body {
-    background-color: black;
+    background-color: #000000;
+    color: var(--color-fg);
+    margin: 0px;
+    padding: 8px;
+    font-family: sans-serif;
 }
 
-.top {
-    padding: 32px;
+header {
+    display: inline-flex;
+    height: 60px;
+}
+
+footer {
+    color: var(--color-fg-alt);
+    margin: 16px;
     text-align: center;
+    font-size: small;
 }
 
-.logo {
-    width: 200px;
+a {
+    color: #94aff8;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #00e1ff !important;
+}
+
+a:visited {
+    color: #c17fd1;
+}
+
+hr {
+    border-color: var(--color-bg-alt);
+    margin: 32px;
+    width: 90%;
+}
+
+.icon-container {
+    margin: 64px;
+    padding: 0px;
+    width: 50px;
+    height: 50px;
+    overflow: visible;
+    border-radius: 150px;
+    transition: box-shadow var(--color-transition-time);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-container:hover {
+    box-shadow:
+        0 0 50px 30px #ff00ff, /* inner magenta */
+        0 0 70px 45px #00ffff; /* outer cyan */
+}
+
+.icon {
+    padding: 0px;
+    margin: 0px;
+    height: 150px;
+}
+
+.nav {
+    display: inline-flex;
+    align-items: center;
+    list-style-type: none;
+    padding: 16px;
+}
+
+.nav a {
+    margin: 0px;
+    padding: 16px;
+    border-top: 2px solid var(--color-bg-alt);
+    transition: color var(--color-transition-time);
+    transition: border-color var(--color-transition-time);
+}
+
+.nav a:hover {
+    color: var(--color-fg) !important;
+    border-color: var(--color-fg-alt);
+}
+
+.nav a, .nav a:visited {
+    color: var(--color-fg-alt);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding: 32px;
+}
+
+.korn-logo {
+    margin: 16px;
+    width: 250px;
+}
+
+.welcome {
+    margin: 16px;
+    font-family: Kornucopia;
+    font-size: 96px;
+    text-align: center;
 }

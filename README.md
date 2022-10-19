@@ -1,6 +1,6 @@
 # Kornucopia
 
-<img src="assets/icon.png" alt="Icon" width="100">
+<img src="static/icons/icon.png" alt="Icon" width="100">
 
 An unofficial, single page, interactive website for the nu metal band
 [Korn](https://wikipedia.org/wiki/Korn).
