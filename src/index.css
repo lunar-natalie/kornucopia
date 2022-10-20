@@ -7,27 +7,30 @@
 
 @font-face {
     font-family: Kornucopia;
-    src: url(../static/fonts/kornucopia.ttf);
+    src: url("../static/fonts/kornucopia.ttf");
 }
 
-body {
+html, body {
     background-color: #000000;
     color: var(--color-fg);
     margin: 0px;
-    padding: 8px;
+    padding: 0px;
     font-family: sans-serif;
+    width: 100%;
+    height: 100%;
 }
 
 header {
-    display: inline-flex;
-    height: 60px;
+    width: calc(100% - 32px);
+    margin: 0px;
+    padding: 16px;
 }
 
 footer {
     color: var(--color-fg-alt);
     margin: 16px;
-    text-align: center;
     font-size: small;
+    text-align: center;
 }
 
 a {
@@ -49,33 +52,55 @@ hr {
     width: 90%;
 }
 
-.icon-container {
-    margin: 64px;
+.row-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* vertical center */
+}
+
+.glow-container { /* container smaller than icon for glow effect */
+    margin: 50px;
     padding: 0px;
-    width: 50px;
-    height: 50px;
+    width: 0px;
+    height: 0px;
     overflow: visible;
     border-radius: 150px;
-    transition: box-shadow var(--color-transition-time);
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: box-shadow var(--color-transition-time);
 }
 
-.icon-container:hover {
+.glow-container .icon {
+    padding: 0px;
+    margin: 0px;
+    height: 100px;
+}
+
+.glow-container:hover {
     box-shadow:
         0 0 50px 30px #ff00ff, /* inner magenta */
         0 0 70px 45px #00ffff; /* outer cyan */
 }
 
-.icon {
+.container-link {
     padding: 0px;
-    margin: 0px;
-    height: 150px;
+}
+
+.icon.medium {
+    height: 60px;
+}
+
+.icon.small {
+    height: 15px;
+}
+
+.exit {
+    margin-left: 8px;
 }
 
 .nav {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     list-style-type: none;
     padding: 16px;
@@ -89,31 +114,71 @@ hr {
     transition: border-color var(--color-transition-time);
 }
 
+.nav a, .nav a:visited {
+    color: var(--color-fg-alt);
+}
+
 .nav a:hover {
     color: var(--color-fg) !important;
     border-color: var(--color-fg-alt);
 }
 
-.nav a, .nav a:visited {
-    color: var(--color-fg-alt);
-}
-
 .content {
+    padding: 16px;
     display: flex;
     flex-direction: column;
-    text-align: center;
     align-items: center;
-    padding: 32px;
-}
-
-.korn-logo {
-    margin: 16px;
-    width: 250px;
+    text-align: center;
 }
 
 .welcome {
-    margin: 16px;
-    font-family: Kornucopia;
-    font-size: 96px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
     text-align: center;
+}
+
+.welcome h1, h2 {
+    font-family: Kornucopia;
+}
+
+.welcome h1 {
+    font-size: 96px;
+    font-weight: normal;
+    margin: 0px;
+}
+
+.welcome h2 {
+    color: var(--color-fg-alt);
+    font-size: 64px;
+    font-weight: normal;
+    margin: 0 0 16px 0;
+}
+
+.welcome .banner {
+    width: 100%;
+    height: 270px;
+    margin: 0;
+    padding: 0;
+    background-image: url("../static/images/band.jpg");
+    background-size: cover;
+    background-position-y: bottom;
+}
+
+.welcome .icon {
+    margin: 16px;
+    height: 220px;
+}
+
+.right {
+    margin-left: auto;
+}
+
+.dim {
+    opacity: 0.3;
+    transition: opacity var(--color-transition-time);
+}
+
+.dim:hover {
+    opacity: 0.8;
 }
