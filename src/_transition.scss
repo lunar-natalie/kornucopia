@@ -1,0 +1,9 @@
+$time: 250ms;
+
+// Creates a transition property for each transition in $properties with the
+// default timespan.
+@mixin default($properties...) {
+    @each $property in $properties {
+        transition: $property $time;
+    }
+}

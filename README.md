@@ -1,6 +1,6 @@
 # Kornucopia
 
-<img src="static/icons/icon.png" alt="Icon" width="100">
+<img src="assets/icons/icon.png" alt="Icon" width="100">
 
 An unofficial, single page, interactive website for the nu metal band
 [Korn](https://wikipedia.org/wiki/Korn).
@@ -12,20 +12,22 @@ Pre-release work in progress.
 ## Table of contents
 
 * [Kornucopia](#kornucopia)
-    * [Table of contents](#table-of-contents)
-    * [Documentation](#documentation)
-    * [Server dependencies](#server-dependencies)
-    * [Development server](#development-server)
-        * [Standalone](#standalone)
-        * [VS Code](#vs-code)
-    * [Production server](#production-server)
-    * [Project structure](#project-structure)
-        * [Code](#code)
-    * [Debugging](#debugging)
-        * [Additional dependencies](#additional-dependencies)
-        * [VS Code](#vs-code-1)
-    * [License](#license)
-        * [Exceptions](#exceptions)
+  * [Table of contents](#table-of-contents)
+  * [Documentation](#documentation)
+  * [Server dependencies](#server-dependencies)
+  * [Development server](#development-server)
+    * [Standalone](#standalone)
+    * [VS Code](#vs-code)
+  * [Production server](#production-server)
+  * [Project structure](#project-structure)
+    * [Code](#code)
+  * [Debugging](#debugging)
+    * [Additional dependencies](#additional-dependencies)
+    * [VS Code](#vs-code-1)
+  * [License](#license)
+  * [Asset licenses](#asset-licenses)
+    * [CC BY-SA 4.0](#cc-by-sa-40)
+    * [Other](#other)
 
 ## Documentation
 
@@ -64,7 +66,7 @@ yarn install && yarn serve
 Run the following shell command to build the client into `dist/`:
 
 ```shell
-yarn build
+yarn install && yarn build
 ```
 
 To host a production server, serve `dist/` as the server root or as an
@@ -78,7 +80,8 @@ To host a production server, serve `dist/` as the server root or as an
 
 ### Code
 
-* Written in HTML, CSS, and [TypeScript](https://www.typescriptlang.org/).
+* Written in HTML, [SCSS](https://sass-lang.com/), and
+  [TypeScript](https://www.typescriptlang.org/).
 * Built using [Yarn](https://yarnpkg.com/) and [Parcel](https://parceljs.org/).
 * Lines are no longer than 80 characters, unless readability or paths are
   affected.
@@ -100,7 +103,7 @@ To host a production server, serve `dist/` as the server root or as an
 
 ## License
 
-Copyright (c) 2022 Natalie Wiggins.
+Copyright (c) 2022 The Kornucopia Authors.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -117,18 +120,30 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 Written by Natalie Wiggins.
 
-### Exceptions
+See `LICENSE` and `AUTHORS` for more information.
 
-Website text content is Public Domain.
+## Asset licenses
 
-The Kornucopia icon is Public Domain and arranged by Natalie Wiggins
-(`assets/icon.*`, `static/icons/favicon.*`).
+### CC BY-SA 4.0
 
-The Korn logo is copyright (c) Korn (`static/images/korn_logo.png`).
+Website text content and the Kornucopia icon (`assets/src/icon.kra`,
+`assets/icons/*`) are copyright (c) 2022 The Kornucopia Authors under the terms
+of the [Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/)
+license.
 
-The 'Kornucopia' font (origin unrelated to the Kornucopia website) is created by
-Korn and is of unknown license, however is free for both personal and commercial
-use (`static/fonts/kornucopia.ttf`). The style of this font was created by
+You are free to:
+* Share — copy and redistribute the material in any medium or format
+* Adapt — remix, transform, and build upon the material
+  for any purpose, even commercially.
+
+Created by Natalie Wiggins.
+
+### Other
+
+The Korn logo (`assets/images/korn_logo.png`) is copyright (c) Korn.
+
+The 'Kornucopia' font (`assets/fonts/kornucopia.ttf`) is an existing unlicensed
+font unrelated to the Kornucopia project. The style of this font was created by
 Jonathan Davis and Korn.
 
 Cover art for the albums *Korn* (1994), *Life is Peachy* (1996),
@@ -147,6 +162,6 @@ Cover art for the albums *Korn III: Remember Who You Are* (2010),
 Cover art for the album *Requiem* (2022) is copyright (c)
 Loma Vista Recordings / Concord, all rights reserved.
 
-Aformentioned cover art is located under `static/images/cover_art/`.
+All aformentioned cover art is located under `assets/images/cover_art/`.
 
-See `LICENSE` and `AUTHORS` for more information.
+Images of band members are Public Domain (`static/images/members/*/*`).

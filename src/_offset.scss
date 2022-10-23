@@ -1,0 +1,11 @@
+// Sets the dimension $property to fill its container with margin or padding
+// (#offset-property) of thickness $offset. Only sets horiziontal margin/padding
+// if $horizontal-auto is true.
+@mixin max($property, $offset-property, $offset, $horizontal-auto: false) {
+    #{$property}: calc(100% - ($offset * 2));
+    @if $horizontal-auto {
+        #{$offset-property}: $offset auto $offset auto;
+    } @else {
+        #{$offset-property}: $offset;
+    }
+}
