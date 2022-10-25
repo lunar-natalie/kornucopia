@@ -4,35 +4,41 @@
         <meta charset="utf-8">
         <title>KoRnucopia</title>
         <link rel="stylesheet" href="index.scss">
-        <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon_32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="../assets/icons/favicon_16x16.png">
+        <link rel="icon" type="image/png" sizes="32x32"
+            href="../assets/icons/favicon_32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16"
+            href="../assets/icons/favicon_16x16.png">
         <link rel="shortcut icon" href="../assets/icons/favicon.ico">
         <script type="module" src="index.ts"></script>
     </head>
     <body>
-        <header class="row-container">
+        <header>
             <div class="glow-container">
                 <a class="container-link" href="/">
-                    <img class="icon" src="../assets/icons/icon.png" alt="Kornucopia">
+                    <img class="icon" alt="Kornucopia"
+                        src="../assets/icons/icon.png">
                 </a>
             </div>
             <ul class="nav">
                 <li><a href="#about">About</a></li>
                 <li><a href="#behind-korn">Behind Ko&#x42fn</a></li>
                 <li><a href="#albums">Albums</a></li>
-                <li><a href="#past-tours">Past Tours</a></li>
                 <li><a href="#for-visitors">For Visitors</a></li>
             </ul>
-            <a class="row-container right container-link dim" href="http://kornofficial.com/">
-                <img class="icon medium" src="../assets/images/korn_logo.png" alt="Korn">
-                <img class="icon small exit" src="../assets/images/arrow_right.png" alt="Exit">
+            <a class="row-container right container-link dim"
+                href="http://kornofficial.com/">
+                <img class="icon medium" alt="Korn"
+                    src="../assets/images/korn_logo.png">
+                <img class="icon small exit" alt="Exit"
+                    src="../assets/images/arrow_right.png">
             </a>
         </header>
         <div class="welcome">
             <h1>Welcome to Kornucopia</h1>
             <h2>Home of</h2>
             <div class="banner">
-                <img class="icon" src="../assets/images/korn_logo.png" alt="Korn">
+                <img class="icon" alt="Korn"
+                    src="../assets/images/korn_logo.png">
             </div>
         </div>
         <div class="content">
@@ -59,25 +65,200 @@
                         </div>
                     </div>
                 </div>
-                <h2>On Hiatus</h2>
-                <h2>Past Members</h2>
+                <div class="member" id="munky">
+                    <div class="inner">
+                        <div class="details">
+                            <h1>James <i>"Munky"</i> Shaffer</h1>
+                            <h2>Guitar, backing vocals</h2>
+                            <p>
+                                With his classic signature Ibanez 7-string,
+                                Munky is fundamental to Ko&#x42fn's melodic
+                                glue. An insanely charismatic individual with
+                                the guitar parts that give Ko&#x42fn their dark
+                                harmony in combination with Head.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="member" id="head">
+                    <div class="inner">
+                        <div class="details">
+                            <h1>Brian <i>"Head"</i> Welch</h1>
+                            <h2>Guitar, backing vocals</h2>
+                            <p>
+                                In harmony with Munky, Head provides
+                                heavier-than-bricks guitar tone and dark screams
+                                motivated by the overcoming of his life
+                                struggles.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="member" id="ray">
+                    <div class="inner">
+                        <div class="details">
+                            <h1>Ray Luzier</h1>
+                            <h2>Drums</h2>
+                            <p>
+                                Incorporating his tight double kick technique
+                                with incredible fills atop continuously
+                                percussive riffs, Ray is a wonderful person who
+                                keeps the rhythmic flow of the band alive.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <div class="row-container">
+                        <h2>On Hiatus</h2>
+                    </div>
+                    <div class="inner">
+                        <div class="member" id="fieldy">
+                            <div class="inner">
+                                <div class="details">
+                                    <h1>Reginald <i>"Fieldy"</i> Arvizu</h1>
+                                    <h2>Bass</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <div class="row-container">
+                        <h2>Former Members</h2>
+                    </div>
+                    <div class="inner">
+                        <div class="member" id="david">
+                            <div class="inner">
+                                <div class="details">
+                                    <h1>David Silveria</h1>
+                                    <h2>Drums, percussion</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div id="albums">
                 <h1>Albums</h1>
-            </div>
-            <div id="past-tours">
-                <h1>Past Tours</h1>
+                <div class="inner">
+                    <div class="album">
+                        <img src="../assets/images/cover_art/korn.jpg">
+                        <div class="label">
+                            <span class="title">Korn</span>
+                            <span class="year">1994</span>
+                        </div>
+                    </div>
+                    <div class="album">
+                        <img src="../assets/images/cover_art/life_is_peachy.jpg">
+                        <div class="label">
+                            <span class="title">Life is Peachy</span>
+                            <span class="year">1996</span>
+                        </div>
+                    </div>
+                    <div class="album">
+                        <img src="../assets/images/cover_art/follow_the_leader.jpg">
+                        <div class="label">
+                            <span class="title">Follow the Leader</span>
+                            <span class="year">1998</span>
+                        </div>
+                    </div>
+                    <div class="album">
+                        <img src="../assets/images/cover_art/issues.jpg">
+                        <div class="label">
+                            <span class="title">Issues</span>
+                            <span class="year">1999</span>
+                        </div>
+                    </div>
+                    <div class="album">
+                        <img src="../assets/images/cover_art/untouchables.jpg">
+                        <div class="label">
+                            <span class="title">Untouchables</span>
+                            <span class="year">2002</span>
+                        </div>
+                    </div>
+                    <div class="album">
+                        <img src="../assets/images/cover_art/talitm.jpg">
+                        <div class="label">
+                            <span class="title">Take a Look in the Mirror</span>
+                            <span class="year">2003</span>
+                        </div>
+                    </div>
+                    <div class="album">
+                        <img src="../assets/images/cover_art/syotos.jpg">
+                        <div class="label">
+                            <span class="title">See You on the Other Side</span>
+                            <span class="year">2005</span>
+                        </div>
+                    </div>
+                    <div class="album">
+                        <img src="../assets/images/cover_art/untitled.jpg">
+                        <div class="label">
+                            <span class="title">Untitled</span>
+                            <span class="year">2007</span>
+                        </div>
+                    </div>
+                    <div class="album">
+                        <img src="../assets/images/cover_art/korn3.jpg">
+                        <div class="label">
+                            <span class="title">
+                                Korn III: Remember Who You Are</span>
+                            <span class="year">2010</span>
+                        </div>
+                    </div>
+                    <div class="album">
+                        <img src="../assets/images/cover_art/path_of_totality.jpg">
+                        <div class="label">
+                            <span class="title">The Path of Totality</span>
+                            <span class="year">2011</span>
+                        </div>
+                    </div>
+                    <div class="album">
+                        <img src="../assets/images/cover_art/paradigm_shift.jpg">
+                        <div class="label">
+                            <span class="title">The Paradigm Shift</span>
+                            <span class="year">2013</span>
+                        </div>
+                    </div>
+                    <div class="album">
+                        <img src="../assets/images/cover_art/serenity.jpg">
+                        <div class="label">
+                            <span class="title">The Serenity of Suffering</span>
+                            <span class="year">2016</span>
+                        </div>
+                    </div>
+                    <div class="album">
+                        <img src="../assets/images/cover_art/nothing.jpg">
+                        <div class="label">
+                            <span class="title">The Nothing</span>
+                            <span class="year">2019</span>
+                        </div>
+                    </div>
+                    <div class="album">
+                        <img src="../assets/images/cover_art/requiem.jpg">
+                        <div class="label">
+                            <span class="title">Requiem</span>
+                            <span class="year">2022</span>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div id="for-visitors">
                 <h1>For Visitors</h1>
+                <p>
+                    Thank you for visiting Ko&#x42fnucopia, the unofficial home
+                    of Ko&#x42fn &#x1f918
+                </p>
             </div>
             <hr>
             <footer>
-                Copyright &copy; The Kornucopia Authors, 2022 - code is held
+                Copyright &copy; The Kornucopia Authors, 2022; code is held
                 under the terms of the GPLv3 license, and text content under the
                 terms of the CC BY-SA 4.0 license. Other assets are held under
                 different licenses. See the Kornucopia
-                <a href="https://github.com/lunar-natalie/kornucopia">source repository</a>
+                <a href="https://github.com/lunar-natalie/kornucopia">
+                    source repository
+                </a>
                 for more information.
             </footer>
         </div>

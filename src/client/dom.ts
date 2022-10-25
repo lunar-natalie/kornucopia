@@ -1,37 +1,30 @@
-import { getMemberMetadataArray } from "./static_loader";
-
+import { DropdownManager } from "./dropdown_manager";
+import { getMemberMetadataArray } from "./loader";
+import { ImageManager } from "./image_manager";
 import $ from "jquery";
 
-/**
- * Starts asynchronous loading of band member metadata from the server and
- * attaches a callback to add background images and portrait containers to
- * member sections on the DOM.
- */
 export function setupMemberImages(): void {
     getMemberMetadataArray().then((metadataArray) => {
-        $(".content .member").each((_i, el) => {
-            let id = $(el).attr("id");
-            if (!id) {
+        $(".content .member").each((_i, memberElement) => {
+            let memberId = $(memberElement).attr("id");
+            if (!memberId) {
                 return;
             }
 
-            let currentMetadata = metadataArray.getMetadataForId(id);
+            let currentMetadata = metadataArray.getMetadataForId(memberId);
             if (!currentMetadata) {
                 return;
             }
 
-            let imagePaths = currentMetadata.getImagePaths();
-            if (imagePaths.length === 0) {
-                return;
-            }
-
-            $(el).css("background-image", imagePaths[0].getCssUrl());
-
-            let imageContainer = document.createElement("div");
-            imageContainer.classList.add("image-container");
-            $(el).find(".inner").first().append(imageContainer);
+            new ImageManager(memberElement, currentMetadata.getImagePaths());
         });
     }).catch((reason) => {
         console.warn(reason);
+    });
+}
+
+export function setupDropdowns(): void {
+    $(".content .dropdown").each((_i, dropdownElement) => {
+        new DropdownManager(dropdownElement);
     });
 }

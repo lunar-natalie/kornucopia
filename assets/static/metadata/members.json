@@ -2,7 +2,49 @@
     {
         "id": "jonathan",
         "imageNames": [
-            "1.jpg"
+            "1.jpg",
+            "2.jpg",
+            "3.jpg"
+        ]
+    },
+    {
+        "id": "munky",
+        "imageNames": [
+            "1.jpg",
+            "2.jpg",
+            "3.jpg"
+        ]
+    },
+    {
+        "id": "head",
+        "imageNames": [
+            "1.jpg",
+            "2.jpg",
+            "3.jpg"
+        ]
+    },
+    {
+        "id": "ray",
+        "imageNames": [
+            "1.jpg",
+            "2.jpg",
+            "3.jpg"
+        ]
+    },
+    {
+        "id": "fieldy",
+        "imageNames": [
+            "1.jpg",
+            "2.jpg",
+            "3.jpg"
+        ]
+    },
+    {
+        "id": "david",
+        "imageNames": [
+            "1.jpg",
+            "2.jpg",
+            "3.jpg"
         ]
     }
 ]

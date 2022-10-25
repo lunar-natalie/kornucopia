@@ -15,6 +15,7 @@ body {
 }
 
 header {
+    @extend .row-container;
     margin: 0;
     @include offset.max(width, padding, 16px);
 }
@@ -31,12 +32,12 @@ a {
     color: colors.$link;
     text-decoration: none;
 
-    &:hover {
-        color: colors.$highlight !important;
-    }
-
     &:visited {
         color: colors.$lowlight;
+    }
+
+    &:hover {
+        color: colors.$highlight;
     }
 }
 
@@ -95,6 +96,10 @@ hr {
     }
 }
 
+.control {
+    cursor: pointer;
+}
+
 .nav {
     display: flex;
     align-items: center;
@@ -114,14 +119,19 @@ hr {
         @include transition.default(color, border-color);
 
         &:visited {
-            color: colors.$secondary !important;
+            color: colors.$secondary;
         }
 
         &:hover {
-            color: colors.$primary !important;
+            color: colors.$primary;
             border-color: colors.$secondary;
         }
     }
+}
+
+.korn-font {
+    font-family: Kornucopia;
+    font-weight: normal;
 }
 
 .welcome {
@@ -132,8 +142,7 @@ hr {
     padding: 0;
 
     h1, h2 {
-        font-family: Kornucopia;
-        font-weight: normal;
+        @extend .korn-font;
     }
 
     h1 {
@@ -154,12 +163,13 @@ hr {
         padding: 0;
 
         background-image: url('../assets/images/band.jpg');
+        background-repeat: no-repeat;
         background-size: cover;
         background-position-y: bottom;
     }
 
     .icon {
-        @include offset.max(height, margin, 64px, $horizontal-auto: true);
+        @include offset.max(height, margin, 32px, $horizontal-auto: true);
     }
 }
 
@@ -173,14 +183,21 @@ hr {
 
     h1, h2 {
         width: max-content;
-        padding-top: 8px;
+        padding-bottom: 4px;
 
-        border-top: 1px solid colors.$tertiary;
+        border-bottom: 1px solid colors.$tertiary;
     }
 
     .member {
-        padding: 0px !important;
+        margin-bottom: 16px;
+        padding: 0px;
+
+        border-radius: 16px;
+        background-repeat: no-repeat;
         background-size: cover;
+        background-position: center;
+
+        transition: background-image 0.2s ease-in-out;
 
         .inner {
             display: flex;
@@ -189,22 +206,147 @@ hr {
             margin: 0;
             padding: 16px;
 
+            border-radius: inherit;
             backdrop-filter: brightness(.5) blur(32px);
 
-            h1, h2 {
-                margin: 0;
-                border: none !important;
+            .details {
+                width: 130%;
+
+                h1, h2 {
+                    margin: 0;
+                    border: none;
+                }
+
+                h2 {
+                    color: colors.$secondary;
+                }
             }
 
-            h2 {
-                font-style: italic;
-                color: colors.$secondary;
-                margin: 0;
+            .image-container {
+                @extend .row-container;
+                padding: 8px;
+
+                width: 70%;
+                min-height: 300px;
+
+                border-radius: inherit;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+
+                transition: background-image transition.$time ease-in-out,
+                    box-shadow transition.$time linear;
+
+                &:hover {
+                    box-shadow: 2px 2px 30px colors.$background;
+                }
+
+                .control {
+                    height: 25px;
+
+                    opacity: .1;
+                    @include transition.default(opacity);
+
+                    &:hover {
+                        opacity: .8;
+                    }
+
+                    &.forward {
+                        margin-left: auto;
+                    }
+                }
+            }
+        }
+    }
+
+    .dropdown {
+        display: flex;
+        flex-direction: column;
+
+        margin: 0;
+        padding: 0;
+
+        > .row-container {
+            margin: 0;
+            padding: 0;
+
+            .control {
+                height: 16px;
+                margin-left: 16px;
+                padding: 0;
+
+                opacity: .4;
+
+                @include transition.default(opacity);
+
+                &:hover {
+                    opacity: 1;
+                }
+
+                img {
+                    height: 100%;
+                    margin: 0;
+                    padding: 0;
+                    transition: rotate transition.$time ease-in-out;
+                }
             }
         }
 
-        .image-container {
-            width: 30%;
+        > .inner {
+            height: 0;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+
+            @include transition.default(height);
+        }
+
+        &.expanded {
+            > .row-container .control img {
+                rotate: 180deg;
+            }
+        }
+    }
+
+    #albums .inner {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+
+        .album {
+            display: flex;
+            flex-direction: column;
+
+            width: 250px;
+            margin: 16px;
+            padding: 0;
+
+            @include transition.default(scale);
+
+            img {
+                width: inherit;
+                margin: 0;
+                padding: 0;
+
+                border-radius: 8px;
+            }
+
+            .label {
+                text-align: center;
+
+                .title {
+                    font-style: italic;
+                }
+
+                .year {
+                    color: colors.$secondary;
+                }
+            }
+
+            &:hover {
+                scale: 1.1;
+            }
         }
     }
 }

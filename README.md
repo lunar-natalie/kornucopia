@@ -7,8 +7,6 @@ An unofficial, single page, interactive website for the nu metal band
 
 Kornucopia is written as pre-coursework for A level Computer Science.
 
-Pre-release work in progress.
-
 ## Table of contents
 
 * [Kornucopia](#kornucopia)
@@ -24,6 +22,7 @@ Pre-release work in progress.
   * [Debugging](#debugging)
     * [Additional dependencies](#additional-dependencies)
     * [VS Code](#vs-code-1)
+  * [Known issues](#known-issues)
   * [License](#license)
   * [Asset licenses](#asset-licenses)
     * [CC BY-SA 4.0](#cc-by-sa-40)
@@ -87,8 +86,6 @@ To host a production server, serve `dist/` as the server root or as an
   affected.
 * Tab width is 4 spaces, excluding generated files such as `package.json` in
   which the default of a given tool is used.
-* TypeScript/JavaScript source code is written with [JSDoc](https://jsdoc.app/)
-  comments.
 
 ## Debugging
 
@@ -100,6 +97,16 @@ To host a production server, serve `dist/` as the server root or as an
 
 * Run the default launch task (`Launch Chrome against localhost`)
     * Default keybind: `F5`
+
+## Known issues
+
+* Proportions of band member sections are incorrect in smaller viewports.
+* Transitions for images of band members are browser-dependent and do not
+  function under Firefox.
+* Transition fluidity for images of band members is affected by asset load time.
+* Code is uncommented.
+* Line character limit is not adhered to in HTML.
+* Stylesheets should be refactored.
 
 ## License
 
@@ -164,4 +171,4 @@ Loma Vista Recordings / Concord, all rights reserved.
 
 All aformentioned cover art is located under `assets/images/cover_art/`.
 
-Images of band members are Public Domain (`static/images/members/*/*`).
+Images of band members are Public Domain (`assets/static/images/members/*/*`).
