@@ -23,9 +23,10 @@ export class DropdownManager {
         if (this.innerElement) {
             if (this.innerElement.style.height.length === 0
                 || this.innerElement.style.height === "0px") {
-                // Here be dragons
+                // Here be dragons.
                 $(this.innerElement).height(Array.prototype.reduce.call(
-                    $(this.innerElement).children().toArray(), (p, c) => {
+                    $(this.innerElement).children().toArray(),
+                    (p: any, c: any) => {
                         return p + (c.offsetHeight || 0);
                     }, 0) + "px");
             } else {

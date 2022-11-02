@@ -16,6 +16,7 @@ Kornucopia is written as pre-coursework for A level Computer Science.
   * [Development server](#development-server)
     * [Standalone](#standalone)
     * [VS Code](#vs-code)
+    * [Static assets](#static-assets)
   * [Production server](#production-server)
   * [Project structure](#project-structure)
     * [Code](#code)
@@ -58,7 +59,16 @@ yarn install && yarn serve
 ### VS Code
 
 * Run Build Task (`Start development environment`)
-    * Default keybind: `shift + ctrl/cmd + b`
+  * To (re)start the server after environment initialization, run the
+    `Start development` task
+      * Default keybind: `shift + ctrl/cmd + b`
+
+### Static assets
+
+Assets hosted by the server are only updated on the server when referenced as
+native URLs (not strings) in client code. If the content of a static asset has
+changed, however is only referenced by a string, the server must be restarted
+for the new content to be displayed.
 
 ## Production server
 
@@ -100,13 +110,12 @@ To host a production server, serve `dist/` as the server root or as an
 
 ## Known issues
 
-* Proportions of band member sections are incorrect in smaller viewports.
+* Proportions of band member sections are incorrect in smaller viewports
 * Transitions for images of band members are browser-dependent and do not
-  function under Firefox.
-* Transition fluidity for images of band members is affected by asset load time.
-* Code is uncommented.
-* Line character limit is not adhered to in HTML.
-* Stylesheets should be refactored.
+  function under Firefox
+* Transition fluidity for images of band members is affected by asset load time
+* Cannot easily be hosted within a subdirectory of a production server
+* Code is uncommented
 
 ## License
 
@@ -135,8 +144,8 @@ See `LICENSE` and `AUTHORS` for more information.
 
 Website text content and the Kornucopia icon (`assets/src/icon.kra`,
 `assets/icons/*`) are copyright (c) 2022 The Kornucopia Authors under the terms
-of the [Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/)
-license.
+of the Creative Commons Attribution-ShareAlike 4.0 International
+([CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/))] license.
 
 You are free to:
 * Share — copy and redistribute the material in any medium or format

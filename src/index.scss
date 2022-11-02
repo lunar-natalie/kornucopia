@@ -16,6 +16,7 @@ body {
 
 header {
     @extend .row-container;
+
     margin: 0;
     @include offset.max(width, padding, 16px);
 }
@@ -158,7 +159,7 @@ hr {
 
     .banner {
         width: 100%;
-        height: 270px;
+        height: 40vh;
         margin: 0;
         padding: 0;
 
@@ -189,70 +190,150 @@ hr {
     }
 
     .member {
+        position: relative;
         margin-bottom: 16px;
         padding: 0px;
 
         border-radius: 16px;
+
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
+        z-index: 0;
 
-        transition: background-image 0.2s ease-in-out;
-
-        .inner {
-            display: flex;
-            flex-direction: row;
-
+        > .background {
             margin: 0;
-            padding: 16px;
+            padding: 0;
 
             border-radius: inherit;
-            backdrop-filter: brightness(.5) blur(32px);
 
-            .details {
-                width: 130%;
+            &::before {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                padding: 1px;
 
-                h1, h2 {
-                    margin: 0;
-                    border: none;
-                }
-
-                h2 {
-                    color: colors.$secondary;
-                }
-            }
-
-            .image-container {
-                @extend .row-container;
-                padding: 8px;
-
-                width: 70%;
-                min-height: 300px;
+                z-index: -1;
 
                 border-radius: inherit;
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-position: center;
 
-                transition: background-image transition.$time ease-in-out,
-                    box-shadow transition.$time linear;
+                backdrop-filter: brightness(0.5);
+                @include transition.default(backdrop-filter);
+            }
 
-                &:hover {
-                    box-shadow: 2px 2px 30px colors.$background;
+            > .inner {
+                display: flex;
+                flex-direction: row;
+
+                margin: 0;
+                padding: 16px;
+
+                border-radius: inherit;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    margin: -16px;
+                    padding: 1px;
+
+                    z-index: -1;
+
+                    border-radius: inherit;
+
+                    backdrop-filter: blur(32px);
                 }
 
-                .control {
-                    height: 25px;
+                .details {
+                    width: 130%;
 
-                    opacity: .1;
-                    @include transition.default(opacity);
-
-                    &:hover {
-                        opacity: .8;
+                    h1, h2 {
+                        margin: 0;
+                        border: none;
                     }
 
-                    &.forward {
-                        margin-left: auto;
+                    h2 {
+                        color: colors.$secondary;
+                    }
+                }
+
+                .image-container {
+                    @extend .row-container;
+
+                    padding: 0;
+
+                    width: 70%;
+                    min-height: 300px;
+
+                    border-radius: inherit;
+
+                    @include transition.default(box-shadow);
+
+                    > img {
+                        display: none;
+
+                        width: 100%;
+                        height: 100%;
+                        margin: 0;
+                        padding: 0;
+                        object-fit: cover;
+
+                        // TODO: Fix
+                        animation: fading 250ms infinite;
+
+                        border-radius: inherit;
+
+                        &.current {
+                            display: block;
+                        }
+                    }
+
+                    .control {
+                        @extend .row-container;
+
+                        position: absolute;
+
+                        width: auto;
+                        @include offset.max(height, padding, 25px);
+
+                        opacity: 0.2;
+                        @include transition.default(opacity);
+
+                        img {
+                            height: 25px;
+                        }
+
+                        &.forward {
+                            right: 16px;
+                        }
+
+                        &.back {
+                            left: inherit;
+                        }
+
+                        &:hover {
+                            opacity: .8;
+                        }
+                    }
+
+                    &:hover {
+                        box-shadow: 2px 2px 30px colors.$background;
+                    }
+                }
+            }
+        }
+
+        &.update {
+            > .background {
+                &::before {
+                    backdrop-filter: brightness(0);
+                }
+
+                > .inner {
+                    .image-container {
+                        box-shadow: none;
                     }
                 }
             }
@@ -287,6 +368,7 @@ hr {
                     height: 100%;
                     margin: 0;
                     padding: 0;
+
                     transition: rotate transition.$time ease-in-out;
                 }
             }
@@ -312,7 +394,6 @@ hr {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-
 
         .album {
             display: flex;
@@ -357,7 +438,6 @@ hr {
 
 .dim {
     opacity: .3;
-
     @include transition.default(opacity);
 
     &:hover {

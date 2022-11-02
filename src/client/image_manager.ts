@@ -8,6 +8,8 @@ export class ImageManager {
     private forwardControl?: HTMLElement;
     private imagePaths: StaticPath[];
     private imageIndex: number;
+    private previousImageIndex?: number;
+    private imageElements: HTMLElement[];
 
     constructor(rootElement: HTMLElement, imagePaths: StaticPath[]) {
         this.rootElement = rootElement;
@@ -18,6 +20,7 @@ export class ImageManager {
 
         if (this.imagePaths.length > 0) {
             this.imageIndex = 0;
+            this.createImages();
             this.update();
 
             if (this.imagePaths.length > 1) {
@@ -26,18 +29,45 @@ export class ImageManager {
         }
 
         $(this.rootElement).find(".inner").first().append(this.imageContainer);
+
+        this.setDimensions();
+    }
+
+    private createImages(): void {
+        this.imageElements =
+            this.imagePaths.map<HTMLElement>((path, _i, _arr) => {
+                let imageElement = document.createElement("img");
+                $(imageElement).attr("src", path.toString())
+                return imageElement;
+            });
+        $(this.imageContainer).append(this.imageElements);
+    }
+
+    private setDimensions(): void {
+        if (this.imageElements.length === 0) {
+            return;
+        }
+
+        let heightValue = $(this.imageElements[0]).height();
+        if (heightValue) {
+            let cssHeight = Math.round((heightValue / window.innerHeight) * 100)
+                + "vh";
+            $(this.imageContainer).css("height", cssHeight);
+        }
     }
 
     private createControls(): void {
-        this.backControl = document.createElement("img");
+        this.backControl = document.createElement("div");
+        let backImage = document.createElement("img");
         $(this.backControl)
-            .attr("src", "/images/back_control.png")
+            .append($(backImage).attr("src", "/images/back_control.png"))
             .addClass("control back")
             .on("click", () => this.back());
 
-        this.forwardControl = document.createElement("img");
+        this.forwardControl = document.createElement("div");
+        let forwardImage = document.createElement("img");
         $(this.forwardControl)
-            .attr("src", "/images/forward_control.png")
+            .append($(forwardImage).attr("src", "/images/forward_control.png"))
             .addClass("control forward")
             .on("click", () => this.forward());
 
@@ -45,9 +75,23 @@ export class ImageManager {
     }
 
     private update(): void {
-        let imageUrl = this.imagePaths[this.imageIndex].getCssUrl();
-        $(new Array<HTMLElement>(this.rootElement, this.imageContainer))
-            .css("background-image", imageUrl);
+        if (this.previousImageIndex !== undefined) {
+            $(this.imageElements[this.previousImageIndex])
+                .removeClass("current");
+        }
+
+        // TODO: Use CSS animation API
+        $(this.rootElement).addClass("update");
+        let backgroundUrl = this.imagePaths[this.imageIndex].getCssUrl();
+        setTimeout(() => {
+            $(this.rootElement).css("background-image", backgroundUrl);
+            setTimeout(() => {
+                $(this.imageElements[this.imageIndex]).addClass("current");
+                $(this.rootElement).removeClass("update");
+            }, 250);
+        }, 125);
+
+        this.previousImageIndex = this.imageIndex;
     }
 
     private back(): void {
