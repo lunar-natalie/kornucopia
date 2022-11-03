@@ -83,13 +83,14 @@ export class ImageManager {
                 .removeClass("current");
         }
 
-        $(this.rootElement).addClass("update");
+        $(this.rootElement).addClass("transition");
         let backgroundValue = this.imagePaths[this.imageIndex].getCssUrl();
         setTimeout(() => {
-            $(this.rootElement).css("background-image", backgroundValue);
+            $(this.rootElement).css("--background-image-before",
+                backgroundValue);
             setTimeout(() => {
                 $(this.imageElements[this.imageIndex]).addClass("current");
-                $(this.rootElement).removeClass("update");
+                $(this.rootElement).removeClass("transition");
             }, 250);
         }, 250);
 

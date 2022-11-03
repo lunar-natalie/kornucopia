@@ -198,12 +198,28 @@ hr {
 
         border-radius: 16px;
 
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
         z-index: 0;
+        overflow: hidden;
 
-        > .background {
+        &::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+
+            z-index: -1;
+
+            border-radius: inherit;
+
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-image: var(--background-image-before);
+
+            filter: blur(32px);
+        }
+
+        > .filter {
             margin: 0;
             padding: 0;
 
@@ -220,8 +236,10 @@ hr {
 
                 border-radius: inherit;
 
-                backdrop-filter: brightness(0.5);
-                @include transition.default(backdrop-filter);
+                background-color: colors.$background;
+                opacity: .4;
+
+                @include transition.default(opacity);
             }
 
             > .inner {
@@ -232,21 +250,6 @@ hr {
                 padding: 16px;
 
                 border-radius: inherit;
-
-                &::before {
-                    content: '';
-                    position: absolute;
-                    width: 100%;
-                    height: 100%;
-                    margin: -16px;
-                    padding: 1px;
-
-                    z-index: -1;
-
-                    border-radius: inherit;
-
-                    backdrop-filter: blur(32px);
-                }
 
                 .details {
                     width: 130%;
@@ -330,10 +333,10 @@ hr {
             }
         }
 
-        &.update {
-            > .background {
+        &.transition {
+            > .filter {
                 &::before {
-                    backdrop-filter: brightness(0);
+                    opacity: 1;
                 }
 
                 > .inner {
