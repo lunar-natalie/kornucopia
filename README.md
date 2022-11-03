@@ -7,6 +7,8 @@ An unofficial, single page, interactive website for the nu metal band
 
 Kornucopia is written as pre-coursework for A level Computer Science.
 
+http://gothcat.net/korn/
+
 ## Table of contents
 
 * [Kornucopia](#kornucopia)
