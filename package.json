@@ -9,13 +9,20 @@
   "engines": {
     "node": "^18"
   },
+  "targets": {
+    "default": {
+      "engines": {
+        "browsers": ">= 50%"
+      }
+    }
+  },
   "source": "src/index.html",
   "staticFiles": {
     "staticPath": "assets/static"
   },
   "scripts": {
     "serve": "node build.js serve",
-    "build": "node build.js build src/index.html"
+    "build": "node build.js build"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "2.7.0",
