@@ -18,7 +18,7 @@ http://gothcat.net/korn/
   * [Development server](#development-server)
     * [Standalone](#standalone)
     * [VS Code](#vs-code)
-    * [Static assets](#static-assets)
+    * [Dynamically loaded assets](#dynamically-loaded-assets)
   * [Production server](#production-server)
     * [Configuration](#configuration)
     * [Building](#building)
@@ -69,12 +69,11 @@ yarn install && yarn serve
     `Start development` task
       * Default keybind: `shift + ctrl/cmd + b`
 
-### Static assets
+### Dynamically loaded assets
 
-Assets hosted by the server are only updated on the server when referenced as
-native URLs (not strings) in client code. If the content of a static asset has
-changed, however is only referenced by a string, the server must be restarted
-for the new content to be displayed.
+Assets hosted by the server are only updated on the server when referenced
+statically in client code. If the content of a dynamically loaded static asset
+has changed, the bundle must be rebuilt for the new content to be displayed.
 
 ## Production server
 
