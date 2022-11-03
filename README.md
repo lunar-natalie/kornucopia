@@ -18,6 +18,8 @@ Kornucopia is written as pre-coursework for A level Computer Science.
     * [VS Code](#vs-code)
     * [Static assets](#static-assets)
   * [Production server](#production-server)
+    * [Configuration](#configuration)
+    * [Building](#building)
   * [Project structure](#project-structure)
     * [Code](#code)
   * [Debugging](#debugging)
@@ -41,14 +43,16 @@ Kornucopia is written as pre-coursework for A level Computer Science.
 
 ## Server dependencies
 
+- `node` >= 18
 - `yarn`
 
 ## Development server
 
-The local server runs on http://localhost:8080. Supported browsers are
-[Chromium](https://www.chromium.org/Home/) (version 100 and newer) and
-[Mozilla Firefox](https://www.mozilla.org/en-GB/firefox/)
-(version 100 and newer).
+The local server runs on http://localhost:PORT, where the PORT is set by the
+`PORT` environment variable or 8080 by default. The target browsers for
+development are [Chromium](https://www.chromium.org/Home/) (version 100 and
+newer), and [Mozilla Firefox](https://www.mozilla.org/en-GB/firefox/) (version
+100 and newer).
 
 ### Standalone
 
@@ -72,20 +76,22 @@ for the new content to be displayed.
 
 ## Production server
 
-Run the following shell command to build the client into `dist/`:
+### Configuration
+
+To host a production server, build and serve `dist/` as the server root or as an
+[Apache](https://apache.org/)-served directory. If the directory is not the
+server root, set the `PUBLIC_PREFIX` environment variable to the location of the subdirectory in which the site's files will reside, relative to the server root.
+
+### Building
 
 ```shell
 yarn install && yarn build
 ```
 
-To host a production server, serve `dist/` as the server root or as an
-[Apache](https://apache.org/)-served directory.
-
 ## Project structure
 
 * Source code is located in `src/`.
-* Sources for assets are located in `assets/`.
-* Statically served assets are located in `static/`.
+* Non-source code data is located in `assets/`.
 
 ### Code
 
@@ -110,7 +116,6 @@ To host a production server, serve `dist/` as the server root or as an
 
 ## Known issues
 
-* Cannot easily be hosted within a subdirectory of a production server
 * Code is uncommented
 
 ## License

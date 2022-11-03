@@ -6,17 +6,21 @@
   "author": "Natalie Wiggins <islifepeachy@outlook.com>",
   "license": "GPL-3.0",
   "private": false,
+  "engines": {
+    "node": "^18"
+  },
   "source": "src/index.html",
   "staticFiles": {
     "staticPath": "assets/static"
   },
   "scripts": {
-    "serve": "parcel --port 8080",
-    "build": "parcel build src/index.html"
+    "serve": "node build.js serve",
+    "build": "node build.js build src/index.html"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "2.7.0",
     "@types/jquery": "^3.5.14",
+    "@types/node": "^18.11.9",
     "jquery": "^3.6.1",
     "parcel": "^2.7.0",
     "parcel-reporter-static-files-copy": "^1.4.0"

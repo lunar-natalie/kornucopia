@@ -60,14 +60,18 @@ export class ImageManager {
         this.backControl = document.createElement("div");
         let backImage = document.createElement("img");
         $(this.backControl)
-            .append($(backImage).attr("src", "/images/back_control.png"))
+            .append($(backImage).attr("src",
+                new URL("../../assets/images/back_control.png",
+                    import.meta.url).toString()))
             .addClass("control back")
             .on("click", () => this.back());
 
         this.forwardControl = document.createElement("div");
         let forwardImage = document.createElement("img");
         $(this.forwardControl)
-            .append($(forwardImage).attr("src", "/images/forward_control.png"))
+            .append($(forwardImage).attr("src",
+                new URL("../../assets/images/forward_control.png",
+                    import.meta.url).toString()))
             .addClass("control forward")
             .on("click", () => this.forward());
 
@@ -81,9 +85,9 @@ export class ImageManager {
         }
 
         $(this.rootElement).addClass("update");
-        let backgroundUrl = this.imagePaths[this.imageIndex].getCssUrl();
+        let backgroundValue = this.imagePaths[this.imageIndex].getCssUrl();
         setTimeout(() => {
-            $(this.rootElement).css("background-image", backgroundUrl);
+            $(this.rootElement).css("background-image", backgroundValue);
             setTimeout(() => {
                 $(this.imageElements[this.imageIndex]).addClass("current");
                 $(this.rootElement).removeClass("update");

@@ -1,6 +1,8 @@
 export class StaticPath extends String {
+    public static readonly prefix = process.env.PUBLIC_PREFIX || "";
+
     constructor(text: string) {
-        super(text);
+        super(StaticPath.prefix + text);
     }
 
     getCssUrl(): string {
