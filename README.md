@@ -80,7 +80,8 @@ for the new content to be displayed.
 
 To host a production server, build and serve `dist/` as the server root or as an
 [Apache](https://apache.org/)-served directory. If the directory is not the
-server root, set the `PUBLIC_PREFIX` environment variable to the location of the subdirectory in which the site's files will reside, relative to the server root.
+server root, set the `PUBLIC_PREFIX` environment variable to the location of the
+subdirectory in which the site's files will reside, relative to the server root.
 
 ### Building
 
