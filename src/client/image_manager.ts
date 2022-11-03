@@ -80,7 +80,6 @@ export class ImageManager {
                 .removeClass("current");
         }
 
-        // TODO: Use CSS animation API
         $(this.rootElement).addClass("update");
         let backgroundUrl = this.imagePaths[this.imageIndex].getCssUrl();
         setTimeout(() => {
@@ -89,7 +88,7 @@ export class ImageManager {
                 $(this.imageElements[this.imageIndex]).addClass("current");
                 $(this.rootElement).removeClass("update");
             }, 250);
-        }, 125);
+        }, 250);
 
         this.previousImageIndex = this.imageIndex;
     }
