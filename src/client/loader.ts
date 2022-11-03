@@ -1,9 +1,11 @@
 import { MemberMetadata, MemberMetadataArray } from "./member_metadata";
+import { StaticPath } from "./path";
 import $ from "jquery";
 
 export async function getMemberMetadataArray(): Promise<MemberMetadataArray> {
     return new Promise((resolve, reject) => {
-        $.getJSON("/metadata/members.json", (data: object) => {
+        $.getJSON(new StaticPath("/metadata/members.json").toString(),
+            (data: object) => {
             let baseArray = new Array<object>;
             Object.assign(baseArray, data);
 

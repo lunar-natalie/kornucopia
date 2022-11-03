@@ -14,6 +14,6 @@ if (process.env.PUBLIC_PREFIX) {
 
 let argString = parcelArgs.reduce(
     (previousValue, currentValue, _currentIndex, _array) =>
-        `${previousValue} ${currentValue}`);
+    `${previousValue} ${currentValue}`);
 
 execSync(`yarn parcel ${argString}`, { stdio: "inherit" });
