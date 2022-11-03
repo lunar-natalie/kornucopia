@@ -29,7 +29,6 @@ export class ImageManager {
         }
 
         $(this.rootElement).find(".inner").first().append(this.imageContainer);
-
         this.setDimensions();
     }
 
