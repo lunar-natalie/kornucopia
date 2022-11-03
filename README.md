@@ -110,10 +110,6 @@ To host a production server, serve `dist/` as the server root or as an
 
 ## Known issues
 
-* Proportions of band member sections are incorrect in smaller viewports
-* Transitions for images of band members are browser-dependent and do not
-  function under Firefox
-* Transition fluidity for images of band members is affected by asset load time
 * Cannot easily be hosted within a subdirectory of a production server
 * Code is uncommented
 
