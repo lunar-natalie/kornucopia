@@ -9,7 +9,9 @@ export class DropdownManager {
         this.rootElement = rootElement;
         this.controlElement = document.createElement("div");
         let controlImage = document.createElement("img");
-        $(controlImage).attr("src", "/images/caret.png")
+        $(controlImage).attr("src",
+            new URL("../../assets/images/caret.png", import.meta.url)
+                .toString());
         $(this.controlElement)
             .addClass("control")
             .append(controlImage)
